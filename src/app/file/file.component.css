@@ -1,0 +1,35 @@
+p {
+    font-weight: 450;
+    margin-bottom: 0px;
+}
+
+.ml {
+    margin-left: 5px;
+}
+
+.profile{
+    background-color: deepskyblue;
+    color: aliceblue;
+    font-weight: 600;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.custom-button {
+    background-color: deepskyblue;
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    width: 35px;
+    margin: 3px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+.custom-button:hover {
+    background-color: darkblue;
+}
+
+.errorMessage {
+    color: red;
+}

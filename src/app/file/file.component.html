@@ -1,0 +1,193 @@
+
+<div class="container">
+  <h1 class="mt-3">
+    <!-- Button torna alla Homepage (attualmente fa apparire solo un alert) -->
+    <button class="custom-button" routerLink="tableListProfessionista">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <span>{{'Valerio Fasto' | uppercase}} - {{'Software Developer'}}</span>
+  </h1>
+  <!-- Profilo -->
+  <mat-toolbar class="profile">
+    <span>{{'Profilo' | uppercase}}</span>
+  </mat-toolbar>
+  <form (ngSubmit)="salva()" [formGroup]="form" class="mt-3 container">
+    <!-- Figura Professionale -->
+    <div>
+      <h2>{{'Figura Professionale' | uppercase}}</h2>
+      <input  class="form-control" class="ml" type="radio" formControlName="figuraProfessionale" value="Terapista"> Terapista
+      <input  class="form-control" class="ml" type="radio" formControlName="figuraProfessionale" value="Supervisore"> Supervisore
+    </div>
+    <hr>  
+    <!-- Dati Anagrafici -->
+    <div>
+      <h2>{{'Dati Anagrafici' | uppercase}}</h2>
+      <div class="row">
+        <div class="col-12 col-md-3 mt-3 mt-md-0">
+          <p>Nome</p>
+          <input  class="form-control"  class="form-control" formControlName="nome" type="text" class="form-control">
+          <div *ngIf="form.get('nome')?.hasError('required') && form.get('nome')?.touched">
+            <p class="errorMessage">Il nome è obbligatorio.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 mt-3 mt-md-0">
+          <p>Cognome</p>
+          <input  class="form-control"  class="form-control" type="text" formControlName="cognome">
+          <div *ngIf="form.get('cognome')?.hasError('required') && form.get('cognome')?.touched">
+            <p class="errorMessage">Il cognome è obbligatorio.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 mt-3 mt-md-0">
+          <p>Codice Fiscale</p>
+          <input  class="form-control" type="text" formControlName="codiceFiscale">
+          <div *ngIf="form.get('codiceFiscale')?.hasError('required') && form.get('codiceFiscale')?.touched">
+            <p class="errorMessage">Il codice fiscale è obbligatorio.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 mt-3 mt-md-0">
+          <p>Luogo Di Nascita</p>
+          <input  class="form-control" type="text" formControlName="luogoDiNascita">
+          <div *ngIf="form.get('luogoDiNascita')?.hasError('required') && form.get('luogoDiNascita')?.touched">
+            <p class="errorMessage">Data di Nascita obbligatoria.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Domicilio -->
+    <div class="mt-3">
+      <h2>{{'Domicilio' | uppercase}}</h2>
+      <div class="row">
+        <div class="col-12 col-md-3 mt-3 mt-md-0">
+          <p>Indirizzo</p>
+          <input  class="form-control" type="text" formControlName="indirizzo">
+          <div *ngIf="form.get('indirizzo')?.hasError('required') && form.get('indirizzo')?.touched">
+            <p class="errorMessage">Indirizzo obbligatorio.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 mt-3 mt-md-0">
+          <p>Città</p>
+          <input  class="form-control" type="text" formControlName="citta">
+          <div *ngIf="form.get('citta')?.hasError('required') && form.get('citta')?.touched">
+            <p class="errorMessage">Inserisci la tua città.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 mt-3 mt-md-0">
+          <p>Provincia</p>
+          <input  class="form-control" type="text" formControlName="provincia">
+          <div *ngIf="form.get('provincia')?.hasError('required') && form.get('provincia')?.touched">
+            <p class="errorMessage">Provincia obbligatoria.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-1 mt-3 mt-md-0">
+          <p>CAP</p>
+          <input  class="form-control" type="text" formControlName="cap">
+          <div *ngIf="form.get('cap')?.hasError('required') && form.get('cap')?.touched">
+            <p class="errorMessage">Errore CAP</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-2 mt-3 mt-md-0">
+          <p>Regione</p>
+          <input  class="form-control" type="text" formControlName="regione">
+          <div *ngIf="form.get('regione')?.hasError('required') && form.get('regione')?.touched">
+            <p class="errorMessage">Regione obbligatoria.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Contatti -->
+    <div class="mt-3">
+      <h2>{{'Contatti' | uppercase}}</h2>
+      <div class="row">
+        <div class="col-12 col-md-3 mt-3 mt-md-0">
+          <p>Telefono</p>
+          <input  class="form-control" type="text" formControlName="telefono">
+          <div *ngIf="form.get('telefono')?.hasError('required') && form.get('telefono')?.touched">
+            <p class="errorMessage">Inserisci un numero di telefono valido.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 mt-3 mt-md-0">
+          <p>Email</p>
+          <input  class="form-control" type="text" formControlName="email">
+          <div *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
+            <p class="errorMessage">Inserisci una email valida.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Istruzione -->
+    <div class="mt-3">
+      <h2>{{'Istruzione' | uppercase}}</h2>
+      <div class="row">
+        <div class="col-12 col-md-3 mt-3 mt-md-0">
+          <p>Livello di Istruzione</p>
+          <select formControlName="livelloDiIstruzione" class="form-select">
+            <option [value]="'Laurea'">Laurea</option>
+            <option [value]="'Studi Superiori'">Studi Superiori</option>
+            <option [value]="'Scuola Media'">Scuola Media</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-3 mt-3 mt-md-0">
+          <p>Istituto/Università</p>
+          <input  class="form-control" type="text" formControlName="istitutoUniversita">
+        </div>
+        <div class="col-12 col-md-3 mt-3 mt-md-0">
+          <p>Periodo</p>
+          <div class="input-group">
+            <input  class="form-control" type="text" formControlName="periodoIstruzione" placeholder="gg/mm/aaaa - gg/mm/aaaa" bsDaterangepicker [bsConfig]="{dateInputFormat: 'dd-MM-yyyy'}">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button">
+                <i class="far fa-calendar-alt"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 mt-3 mt-md-0">
+          <p>Ambito di studi</p>
+          <input  class="form-control" type="text" formControlName="ambitoDiStudi">
+        </div>
+      </div>
+    </div>
+
+    <!-- Esperienze professionali -->
+    <div class="mt-3">
+      <h2>{{'Esperienze Professionali' | uppercase}}</h2>
+      <div class="row">
+        <div class="col-12 col-md-3 mt-3 mt-md-0">
+          <p>Azienda</p>
+          <input  class="form-control" type="text" formControlName="azienda">
+        </div>
+        <div class="col-12 col-md-3 mt-3 mt-md-0">
+          <p>Posizione/Ruolo</p>
+          <input  class="form-control" type="text" formControlName="posizioneRuolo">
+        </div>
+        <div class="col-12 col-md-3 mt-3 mt-md-0">
+          <p>Periodo</p>
+          <div class="input-group">
+            <input class="form-control" type="text" formControlName="periodoLavorativo" placeholder="gg/mm/aaaa - gg/mm/aaaa" bsDaterangepicker [bsConfig]="{dateInputFormat: 'dd-MM-yyyy'}">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button">
+                <i class="far fa-calendar-alt"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 mt-3 mt-md-0">
+          <p>Settore</p>
+          <input class="form-control" type="text" formControlName="settore" class="form-control">
+        </div>
+      </div>
+    </div>
+    <hr>
+    <!-- Button Salva/Annulla -->
+    <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">
+      <i class="fas fa-save"></i>Salva
+    </button>
+    <button mat-raised-button color="warn" class="ml" type="button" (click)="annullaCreazione()">
+      <i class="fas fa-times"></i> Annulla
+    </button>
+  </form>
+</div>
+  
