@@ -8,31 +8,29 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ## PURPOSE
 Enable the creation of a professional to manage requests.
 
-## DEFINITION OF DONE:
+## DEFINITION OF DONE
 Back button, First and Last Name, Professional Title.
 
-# SUBSECTIONS:
-
-## PROFESSIONAL TITLE:
+## PROFESSIONAL TITLE
 Therapist (mandatory if supervisor is null)
 Supervisor (mandatory if therapist is null)
 
-## PERSONAL DETAILS:
+## PERSONAL DETAILS
 First Name, Last Name, Tax Code, Place of Birth (all mandatory)
 
-## RESIDENCE:
+## RESIDENCE
 Address, City, Province, ZIP Code, Region (all mandatory)
 
-## CONTACTS:
+## CONTACTS
 Phone, Email (both mandatory)
 
-##EDUCATION:
+## EDUCATION
 Education Level, Institute/University, Period, Field of Study
 
 ## PROFESSIONAL EXPERIENCES
 Company, Position/Role, Period, Sector
 
-## ADDITIONAL FUNCTIONALITIES:
+## ADDITIONAL FUNCTIONALITIES
 Validate mandatory parameters, display error messages, and change label colors if needed.
 Successful validation allows creation through "Save" button, showing a success message and navigating to the new therapist's details.
 Allow cancellation with a confirmation modal, returning to the therapist list.
