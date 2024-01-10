@@ -1,27 +1,39 @@
 # BackofficeForm
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+This project was generated with Angular v.15.2.4.
 
 ## Development server
-
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## PURPOSE
+Enable the creation of a professional to manage requests.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## DEFINITION OF DONE:
+Back button, First and Last Name, Professional Title.
 
-## Build
+# SUBSECTIONS:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## PROFESSIONAL TITLE:
+Therapist (mandatory if supervisor is null)
+Supervisor (mandatory if therapist is null)
 
-## Running unit tests
+## PERSONAL DETAILS:
+First Name, Last Name, Tax Code, Place of Birth (all mandatory)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## RESIDENCE:
+Address, City, Province, ZIP Code, Region (all mandatory)
 
-## Running end-to-end tests
+## CONTACTS:
+Phone, Email (both mandatory)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+##EDUCATION:
+Education Level, Institute/University, Period, Field of Study
 
-## Further help
+## PROFESSIONAL EXPERIENCES
+Company, Position/Role, Period, Sector
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## ADDITIONAL FUNCTIONALITIES:
+Validate mandatory parameters, display error messages, and change label colors if needed.
+Successful validation allows creation through "Save" button, showing a success message and navigating to the new therapist's details.
+Allow cancellation with a confirmation modal, returning to the therapist list.
+Each procedure is subject to permissions.
